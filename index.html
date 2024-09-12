@@ -3,26 +3,37 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>作者简介</title>
+    <title>作者背景</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-image: url('b.jpg'); /* 请替换为正确的图片路径 */
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center center;
-            height: 100vh;
-            position: relative;
-        }
+         body {
+                    margin: 0;
+                    padding: 0;
+                    background-image: url('b.jpg'); /* 请替换为正确的图片路径 */
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    height: 100vh;
+                    position: relative;
+                }
+                .author-background {
+                    position: absolute;
+                    top: 18px; /* 距离顶部的距离 */
+                    left: 50%;
+                    transform: translateX(-50%);
+                    font-family: '楷体', 'SimKai', 'Microsoft YaHei', sans-serif;
+                    font-size: 60px; /* 字体大小 */
+                    color: black; /* 字体颜色 */
+                    text-align: center; /* 文本居中 */
+                    z-index: 2; /* 确保文字位于其他内容之上 */
+                }
         .transparent-overlay {
             position: absolute;
-            top: 50%;
+            top: 55%;
             left: 50%;
             transform: translate(-50%, -50%);
             padding: 30px;
             width: 90%; /* 覆盖整个背景的宽度 */
-            height: 80%; /* 覆盖整个背景的高度 */
+            height: 70%; /* 覆盖整个背景的高度 */
             background-color: rgba(255, 255, 255, 0.7); /* 透明背景 */
             z-index: 1; /* 确保覆盖层位于背景图片之上 */
             display: flex;
@@ -36,8 +47,8 @@
         .button-3,
         .button-4 {
             margin: 5%;
-            width: 30vh; /* 按钮宽度 */
-            height: 35vw; /* 按钮高度 */
+            width: 28vh; /* 按钮宽度 */
+            height: 30vw; /* 按钮高度 */
             background-color: wheat; /* 按钮颜色 */
             color: white; /* 按钮文字颜色 */
             clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); /* 菱形路径 */
@@ -46,10 +57,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 40px; /* 按钮文字大小 */
-            display: flex;
-            align-items: center; /* 垂直居中内容 */
-            justify-content: center; /* 水平居中内容 */
+            font-size: 35px; /* 按钮文字大小 */
             font-family: '楷体', 'SimKai', 'Microsoft YaHei', sans-serif;
         }
         .button-1:hover,
@@ -59,22 +67,22 @@
             transform: scale(1.2);  /* 鼠标悬停时稍微放大背景图片 */
         }
         .button-1 {
-            background-image: url('an2.png'); /* 请替换为您的图片路径 */
+            background-image: url('an2.png'); 
             background-size: cover;
             background-position: center;
         }
         .button-2 {
-            background-image: url('an1.webp'); /* 请替换为您的图片路径 */
+            background-image: url('an1.webp'); 
             background-size: cover;
             background-position: center;
         }
         .button-3 {
-            background-image: url('an2.png'); /* 请替换为您的图片路径 */
+            background-image: url('an2.png'); 
             background-size: cover;
             background-position: center;
         }
         .button-4 {
-            background-image: url('an1.webp'); /* 请替换为您的图片路径 */
+            background-image: url('an1.webp'); 
             background-size: cover;
             background-position: center;
         }
@@ -100,8 +108,8 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             background-color: rgba(255, 255, 255, 0.5);
             display: flex;
             align-items: center;
@@ -127,104 +135,104 @@
         .arrow-right::before {
             transform: rotate(-45deg);
         }
-		.exit-hint {
-		    position: absolute;
-		    top: 5%;
-		    right: 1%;
-		    transform: translateY(-50%);
-		    color: white;
-		    padding: 5px 10px;
-		    border-radius: 5px;
-		    font-size: 25px;
-			font-family: '楷体', 'SimKai', 'Microsoft YaHei', sans-serif;
-		}
-		.back-arrow {
-		    position: absolute;
-		    top: 10px;
-		    left: 20px;
-		    width: 50px;
-		    height: 50px;
-		    background: none;
-		    border: none;
-		    cursor: pointer;
-		    display: flex;
-		    align-items: center;
-		    justify-content: center;
-		    color: white;
-		        }
-		.back-arrow:before {
-		    content: "←";
-		    font-size: 50px;
-			font-family: '楷体', 'SimKai', 'Microsoft YaHei', sans-serif;
-		        }
+        .exit-hint {
+            position: absolute;
+            top: 5%;
+            right: 1%;
+            transform: translateY(-50%);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 20px;
+            font-family: '楷体', 'SimKai', 'Microsoft YaHei', sans-serif;
+        }
+        .back-arrow {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        .back-arrow:before {
+            content: "←";
+            font-size: 50px;
+            font-family: '楷体', 'SimKai', 'Microsoft YaHei', sans-serif;
+        }
     </style>
 </head>
 <body>
-	<div class="back-arrow" onclick="window.location.href='https://gaoyv8888.github.io/EX1/'"></div>
+    <div class="author-background">作者背景</div>
+    <div class="back-arrow" onclick="window.location.href='https://gaoyv8888.github.io/EX1/'"></div>
     <div class="transparent-overlay">
-            <button class="button-1" onclick="showLargeImage('jl.jpg', 0)">作者简历</button>
-            <button class="button-2" onclick="showLargeImage('sp.jpg', 1)">作者生平</button>
-            <button class="button-3" onclick="showLargeImage('fg.jpg', 2)">写作风格</button>
-            <button class="button-4" onclick="showLargeImage('bj.jpg', 3)">创作背景</button>
-        </div>
-        <div class="large-image-container" id="largeImageContainer">
-            <img class="large-image" id="largeImage" src="" />
-            <div class="arrow-left" onclick="showPreviousImage()"></div>
-            <div class="arrow-right" onclick="showNextImage()"></div>
-            <div class="exit-hint">请单击右键退出</div>
-        </div>
-    
-        <script>
-            var currentImageIndex = 0;
-            var images = ['jl.jpg', 'sp.jpg', 'fg.jpg', 'bj.jpg']; // 请替换为您的图片路径
-            var isLargeImageVisible = false; // 新增标志变量
-            
-            
-            function showLargeImage(imageUrl, index) {
-                var largeImage = document.getElementById('largeImage');
-                largeImage.src = imageUrl;
-                currentImageIndex = index;
-                var largeImageContainer = document.getElementById('largeImageContainer');
-                largeImageContainer.style.display = 'flex';
-                isLargeImageVisible = true; // 设置标志变量为true
-                document.getElementById('largeImageContainer').style.pointerEvents = 'auto'; // 恢复大图容器可点击状态
+        <button class="button-1" onclick="showLargeImage('jl.jpg', 0)">作者简历</button>
+        <button class="button-2" onclick="showLargeImage('sp.jpg', 1)">作者生平</button>
+        <button class="button-3" onclick="showLargeImage('fg.jpg', 2)">写作风格</button>
+        <button class="button-4" onclick="showLargeImage('bj.jpg', 3)">创作背景</button>
+    </div>
+    <div class="large-image-container" id="largeImageContainer">
+        <img class="large-image" id="largeImage" src="" />
+        <div class="arrow-left" onclick="showPreviousImage()"></div>
+        <div class="arrow-right" onclick="showNextImage()"></div>
+        <div class="exit-hint">请单击右键退出</div>
+    </div>
+
+    <script>
+        var currentImageIndex = 0;
+        var images = ['jl.jpg', 'sp.jpg', 'fg.jpg', 'bj.jpg']; // 请替换为您的图片路径
+        var isLargeImageVisible = false; // 新增标志变量
+
+        function showLargeImage(imageUrl, index) {
+            var largeImage = document.getElementById('largeImage');
+            largeImage.src = imageUrl;
+            currentImageIndex = index;
+            var largeImageContainer = document.getElementById('largeImageContainer');
+            largeImageContainer.style.display = 'flex';
+            isLargeImageVisible = true; // 设置标志变量为true
+            document.getElementById('largeImageContainer').style.pointerEvents = 'auto'; // 恢复大图容器可点击状态
+        }
+
+        function showPreviousImage() {
+            if (isLargeImageVisible) { // 检查标志变量
+                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+                showCurrentImage();
             }
-            
-            function showPreviousImage() {
-                if (isLargeImageVisible) { // 检查标志变量
-                    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-                    showCurrentImage();
-                }
+        }
+
+        function showNextImage() {
+            if (isLargeImageVisible) { // 检查标志变量
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                showCurrentImage();
             }
-            
-            function showNextImage() {
-                if (isLargeImageVisible) { // 检查标志变量
-                    currentImageIndex = (currentImageIndex + 1) % images.length;
-                    showCurrentImage();
-                }
-            }
-            
-            function showCurrentImage() {
-                var largeImage = document.getElementById('largeImage');
-                largeImage.src = images[currentImageIndex];
-            }
-            
-            function hideLargeImage() {
-                var largeImageContainer = document.getElementById('largeImageContainer');
-                largeImageContainer.style.display = 'none';
+        }
+
+        function showCurrentImage() {
+            var largeImage = document.getElementById('largeImage');
+            largeImage.src = images[currentImageIndex];
+        }
+
+        function hideLargeImage() {
+            var largeImageContainer = document.getElementById('largeImageContainer');
+            largeImageContainer.style.display = 'none';
+            isLargeImageVisible = false; // 设置标志变量为false
+        }
+
+        // 添加右键关闭大图的功能
+        document.addEventListener('contextmenu', function(event) {
+            var largeImageContainer = document.getElementById('largeImageContainer');
+            if (isLargeImageVisible) { // 检查标志变量
+                event.preventDefault(); // 阻止默认的右键菜单显示
+                largeImageContainer.style.display = 'none'; // 隐藏大图容器
+                largeImageContainer.style.pointerEvents = 'none'; // 恢复到大图容器不可点击状态
                 isLargeImageVisible = false; // 设置标志变量为false
             }
-            
-            // 添加右键关闭大图的功能
-            document.addEventListener('contextmenu', function(event) {
-                var largeImageContainer = document.getElementById('largeImageContainer');
-                if (isLargeImageVisible) { // 检查标志变量
-                    event.preventDefault(); // 阻止默认的右键菜单显示
-                    largeImageContainer.style.display = 'none'; // 隐藏大图容器
-                    largeImageContainer.style.pointerEvents = 'none'; // 恢复到大图容器不可点击状态
-                    isLargeImageVisible = false; // 设置标志变量为false
-                }
-            });
-        </script>
-    </body>
-    </html>
+        });
+    </script>
+</body>
+</html>
